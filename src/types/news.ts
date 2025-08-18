@@ -1,7 +1,7 @@
 // types/news.ts
 
 
-export interface NewsAPIResponse {
+export interface NewsDataResponse {
   status: string;
   totalResults: number;
   results: {
