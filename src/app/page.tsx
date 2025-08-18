@@ -1,18 +1,36 @@
+"use client";
+
 import FooterComponents from "@/components/footer";
 import HeroSection from "@/components/hero";
 import { NavbarComponents } from "@/components/navbar";
 import News from "@/components/news";
-import { fetchNewsAPI } from "@/lib/fetchers/newsapi";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { Article } from "@/types/article";
 
-export default async function Home() {
-  const data = await fetchNewsAPI(); 
+export default function Home() {
+  const [news, setNews] = useState<Article[]>([]);
 
-  console.log(data);
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const response = await axios.get<Article[]>("/api/ai-news");
+        setNews(response.data);
+      } catch (error) {
+        console.error("Error fetching news:", error);
+      } finally {
+      }
+    };
+    fetchNews();
+  }, []);
+
   return (
     <>
       <NavbarComponents />
       <HeroSection />
-      <News />
+
+      <News news={news} />
+
       <FooterComponents />
     </>
   );
