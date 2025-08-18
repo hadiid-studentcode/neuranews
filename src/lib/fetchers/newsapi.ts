@@ -9,7 +9,7 @@ export async function fetchNewsAPI(): Promise<Article[]> {
     {
       params: {
         q: "artificial intelligence",
-        category: "Technology",
+        category: "technology",
         apiKey: process.env.NEWS_API_KEY,
       },
     }
