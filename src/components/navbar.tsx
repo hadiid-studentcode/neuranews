@@ -11,7 +11,7 @@ import Link from "next/link";
 
 export function NavbarComponents() {
   return (
-    <Navbar  rounded>
+    <Navbar  rounded className="fixed top-0 z-50 w-full bg-white px-2 py-2.5 dark:bg-gray-800">
       <NavbarBrand as={Link} href="#">
         <Image
           src={"/logo.png"}
@@ -26,14 +26,14 @@ export function NavbarComponents() {
       </NavbarBrand>
       <NavbarToggle />
       <NavbarCollapse>
-        <NavbarLink href="/" active>
+        <NavbarLink href="#home" active>
           Home
         </NavbarLink>
-        <NavbarLink as={Link} href="/test">
+        <NavbarLink as={Link} href="#news">
           Ai News
         </NavbarLink>
 
-        <NavbarLink href="#">About</NavbarLink>
+        <NavbarLink href="#footer">About</NavbarLink>
       </NavbarCollapse>
     </Navbar>
   );

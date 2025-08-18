@@ -8,7 +8,7 @@ import {
 
 export default function FooterComponents() {
   return (
-    <Footer container>
+    <Footer container id="footer">
       <FooterCopyright href="#" by="NeuraNews" year={2025} />
       <FooterLinkGroup>
         <FooterLink href="#">About</FooterLink>
