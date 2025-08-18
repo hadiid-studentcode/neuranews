@@ -1,56 +1,58 @@
-import { Card } from "flowbite-react";
-import { Button } from "flowbite-react";
+import { Card, Button } from "flowbite-react";
 
 const posts = [
   {
     id: 1,
-    title: "Boost your conversion rate",
+    title: "The Future of Generative AI in Daily Life",
     href: "#",
     description:
-      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
-    date: "Mar 16, 2020",
-    datetime: "2020-03-16",
-    category: { title: "Marketing", href: "#" },
+      "How tools like ChatGPT and Stable Diffusion are shaping the way we work, create, and communicate.",
+    date: "Aug 12, 2024",
+    time: "10:30 AM",
+    datetime: "2024-08-12T10:30:00Z",
+    category: { title: "AI Research", href: "#" },
     author: {
-      name: "Michael Foster",
-      role: "Co-Founder / CTO",
+      name: "Dr. Sarah Kim",
+      role: "AI Researcher",
       href: "#",
       imageUrl:
-        "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=256&h=256&q=80",
     },
   },
   {
     id: 2,
-    title: "How to use search engine optimization to drive sales",
+    title: "Ethics of AI: Balancing Innovation and Responsibility",
     href: "#",
     description:
-      "Optio cum necessitatibus dolor voluptatum provident commodi et. Qui aperiam fugiat nemo cumque.",
-    date: "Mar 10, 2020",
-    datetime: "2020-03-10",
-    category: { title: "Sales", href: "#" },
+      "With AI growing rapidly, what are the ethical challenges in privacy, bias, and human-AI collaboration?",
+    date: "Aug 5, 2024",
+    time: "08:15 AM",
+    datetime: "2024-08-05T08:15:00Z",
+    category: { title: "AI Ethics", href: "#" },
     author: {
-      name: "Lindsay Walton",
-      role: "Front-end Developer",
+      name: "James Miller",
+      role: "Tech Journalist",
       href: "#",
       imageUrl:
-        "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+        "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=256&h=256&q=80",
     },
   },
   {
     id: 3,
-    title: "Improve your customer experience",
+    title: "Robotics Meets Machine Learning",
     href: "#",
     description:
-      "Cupiditate maiores ullam eveniet adipisci in doloribus nulla minus. Voluptas iusto libero adipisci rem et corporis. Nostrud sint anim sunt aliqua. Nulla eu labore irure incididunt velit cillum quis magna dolore.",
-    date: "Feb 12, 2020",
-    datetime: "2020-02-12",
-    category: { title: "Business", href: "#" },
+      "Exploring how advanced robotics and deep learning are merging to revolutionize industries worldwide.",
+    date: "Jul 28, 2024",
+    time: "04:50 PM",
+    datetime: "2024-07-28T16:50:00Z",
+    category: { title: "Technology", href: "#" },
     author: {
-      name: "Tom Cook",
-      role: "Director of Product",
+      name: "Alicia Wong",
+      role: "CTO @ RoboTech",
       href: "#",
       imageUrl:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+        "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&w=256&h=256&q=80",
     },
   },
 ];
@@ -61,20 +63,29 @@ export default function News() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
-            From the blog
+            Latest AI News
           </h2>
           <p className="mt-2 text-lg/8 text-gray-600 dark:text-gray-300">
-            Learn how to grow your business with our expert advice.
+            Stay informed with insights, trends, and breakthroughs in Artificial
+            Intelligence.
           </p>
         </div>
-        <div className="mx-auto mt-10 grid max-w-2xl sm:grid-cols-2 grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3 dark:border-gray-700   ">
+
+        <div className="mx-auto mt-10 grid max-w-2xl sm:grid-cols-2 grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3 dark:border-gray-700">
           {posts.map((post) => (
             <Card
               key={post.id}
               className="max-w-sm"
-              imgAlt="Meaningful alt text for an image that is not purely decorative"
+              imgAlt={post.title}
               imgSrc={post.author.imageUrl}
             >
+              {/* Timestamp */}
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                <time dateTime={post.datetime}>
+                  {post.date} · {post.time}
+                </time>
+              </p>
+
               <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 {post.title}
               </h5>
