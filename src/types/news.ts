@@ -31,3 +31,24 @@ export interface NewsAPIResponse {
     content: string;
   }[];
 }
+
+export interface worldnewsapiResponse {
+  offset: number;
+  number: number;
+  available: number;
+  news: {
+    id: number;
+    title: string;
+    text: string;
+    summary: string;
+    url: string;
+    image: string;
+    video: string | null;
+    publish_date: string;
+    author: string;
+    authors: Array<string>;
+    language: string;
+    source_country: string;
+    sentiment: string;
+  }[];
+}
