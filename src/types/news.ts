@@ -1,6 +1,5 @@
 // types/news.ts
 
-
 export interface NewsDataResponse {
   status: string;
   totalResults: number;
@@ -13,4 +12,22 @@ export interface NewsDataResponse {
     pubDate: string;
   }[];
   nextPage?: string;
+}
+
+export interface NewsAPIResponse {
+  status: string;
+  totalResults: number;
+  articles: {
+    source: {
+      id: number | null;
+      name: string;
+    };
+    author: string | null;
+    title: string;
+    description: string;
+    url: string;
+    urlToImage: string | null;
+    publishedAt: string;
+    content: string;
+  }[];
 }
