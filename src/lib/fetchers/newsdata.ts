@@ -23,6 +23,7 @@ export async function fetchNewsData(): Promise<Article[]> {
       link: a.link,
       image_url: a.image_url,
       timestamp: a.pubDate,
+      sumberAPI: "NewsData API",
     })
   );
 }

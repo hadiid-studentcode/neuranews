@@ -23,6 +23,7 @@ export async function fetchWorldNews(): Promise<Article[]> {
       link: a.url,
       image_url: a.image,
       timestamp: a.publish_date,
+      sumberAPI : "WorldNews API"
     })
   );
 }

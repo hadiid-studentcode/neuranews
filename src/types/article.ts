@@ -5,4 +5,5 @@ export interface Article {
   image_url: string | null;
   timestamp: string;
   link: string;
+  sumberAPI: string;
 }

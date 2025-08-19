@@ -31,7 +31,7 @@ export default function News({ news }: { news: Article[] }) {
               {/* Timestamp */}
               <p className="text-sm text-gray-500 dark:text-gray-400 mb-2 mt-4">
                 <time dateTime={item.timestamp}>
-                  {new Date(item.timestamp).toLocaleString()}
+                  {new Date(item.timestamp).toLocaleString()} - {item.sumberAPI}
                 </time>
               </p>
 
