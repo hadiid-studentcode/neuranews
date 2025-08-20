@@ -23,11 +23,11 @@ export default function News({
         </div>
 
         <TextInput
-          id="email1"
-          type="email"
-          placeholder="name@flowbite.com"
+          id="search"
+          type="text"
+          placeholder="Search..."
           className="mt-10 w-full max-w-md"
-          autoFocus
+        
           onChange={(e) => onSearch(e.target.value)}
           required
         />

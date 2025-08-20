@@ -8,10 +8,16 @@ import {
 } from "flowbite-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
-export function NavbarComponents() {
+export function NavbarComponents({}) {
+  const [active, setActive] = useState("home");
+
   return (
-    <Navbar  rounded className="fixed top-0 z-50 w-full bg-white px-2 py-2.5 dark:bg-gray-800">
+    <Navbar
+      rounded
+      className="fixed top-0 z-50 w-full bg-white px-2 py-2.5 dark:bg-gray-800"
+    >
       <NavbarBrand as={Link} href="#">
         <Image
           src={"/logo.png"}
@@ -26,14 +32,29 @@ export function NavbarComponents() {
       </NavbarBrand>
       <NavbarToggle />
       <NavbarCollapse>
-        <NavbarLink href="#home" active>
+        <NavbarLink
+          as={Link}
+          href="#home"
+          active={active === "home"}
+          onClick={() => setActive("home")}
+        >
           Home
         </NavbarLink>
-        <NavbarLink as={Link} href="#news">
+        <NavbarLink
+          href="#news"
+          active={active === "news"}
+          onClick={() => setActive("news")}
+        >
           Ai News
         </NavbarLink>
 
-        <NavbarLink href="#footer">About</NavbarLink>
+        <NavbarLink
+          href="#footer"
+          active={active === "footer"}
+          onClick={() => setActive("footer")}
+        >
+          About
+        </NavbarLink>
       </NavbarCollapse>
     </Navbar>
   );

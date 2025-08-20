@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 export default function HeroSection() {
   return (
-    <div className="bg-gray-50 py-24 sm:py-32 dark:bg-gray-900" id="news">
+    <div className="bg-gray-50 py-24 sm:py-32 dark:bg-gray-900" id="home">
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
         {/* Heading */}
         <h2 className="text-center text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">
