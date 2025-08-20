@@ -18,18 +18,27 @@ export default function Home() {
         setNews(response.data);
       } catch (error) {
         console.error("Error fetching news:", error);
-      } finally {
       }
     };
     fetchNews();
   }, []);
+
+  const onSearch = (keyword: string) => {
+    axios
+      .get<Article[]>("/api/ai-news", {
+        params: { search: keyword },
+      })
+      .then((response) => {
+        setNews(response.data);
+      });
+  };
 
   return (
     <>
       <NavbarComponents />
       <HeroSection />
 
-      <News news={news} />
+      <News news={news} onSearch={onSearch} />
 
       <FooterComponents />
     </>

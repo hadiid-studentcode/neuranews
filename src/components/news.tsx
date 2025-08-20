@@ -1,8 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import { Article } from "@/types/article";
-import { Card, Button } from "flowbite-react";
+import { Card, Button, TextInput } from "flowbite-react";
 
-export default function News({ news }: { news: Article[] }) {
+export default function News({
+  news,
+  onSearch,
+}: {
+  news: Article[];
+  onSearch: (keyword: string) => void;
+}) {
   return (
     <div className="bg-white py-24 sm:py-32 dark:bg-gray-900" id="news">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -15,6 +21,16 @@ export default function News({ news }: { news: Article[] }) {
             Intelligence.
           </p>
         </div>
+
+        <TextInput
+          id="email1"
+          type="email"
+          placeholder="name@flowbite.com"
+          className="mt-10 w-full max-w-md"
+          autoFocus
+          onChange={(e) => onSearch(e.target.value)}
+          required
+        />
 
         <div className="mx-auto mt-10 grid max-w-2xl sm:grid-cols-2 grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3 dark:border-gray-700">
           {news.map((item) => (
